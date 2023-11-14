@@ -11,7 +11,8 @@ public class App {
         int jeu = 20;
         String perdu = "Vous avez perdu !";
         String gagne = "Vous avez gagné !";
-
+        int cpt = 0;
+        
         while (plateau != jeu) {
             
             for (int i = 1; i <= 5; i++){
@@ -24,8 +25,11 @@ public class App {
             if (plateau != jeu) {
             System.out.println(perdu);
             plateau = 0;
+            cpt = cpt + 1;
             } else {
             System.out.println(gagne);
+            cpt = cpt + 1;
+            System.out.println("Nombre de parties : " + cpt);
             }
         }
     }
