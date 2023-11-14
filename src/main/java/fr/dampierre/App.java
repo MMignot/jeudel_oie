@@ -9,19 +9,25 @@ public class App {
 
         int plateau = 0;
         int jeu = 20;
+        String perdu = "Vous avez perdu !";
+        String gagne = "Vous avez gagné !";
 
-        for (int i = 1; i <= 5; i++){
+        while (plateau != jeu) {
+            
+            for (int i = 1; i <= 5; i++){
             int lancer = generateur.nextInt(6) + 1;
             plateau = plateau + lancer;
             int avancement = jeu - plateau;
             System.out.println("Lancer " + i + " : vous avez fait " + lancer + ". Vous êtes sur la case " + plateau + 
             " (encore " + avancement + " cases)");    
-        }
-        if (plateau == jeu) {
-                System.out.println("Vous avez gagné !");
-            } else {
-                System.out.println("Vous avez perdu !");
             }
+            if (plateau != jeu) {
+            System.out.println(perdu);
+            plateau = 0;
+            } else {
+            System.out.println(gagne);
+            }
+        }
     }
-
+    
 }
